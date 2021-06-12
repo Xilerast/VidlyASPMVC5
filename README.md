@@ -1,0 +1,3 @@
+# Vidly (From Mosh Hamedani's course in Udemy)
+
+This is a video rental web app made in ASP.NET MVC 5, with the assistance of a [course in Udemy](https://www.udemy.com/course/the-complete-aspnet-mvc-5-course/). This implementation is very faithful and similar to the way Mosh Hamedani teaches in this course, with a few exceptions, at least up to the point of the first commit of this repository. Most notable exception is using a session variable on the form to create or edit a customer or a movie, to store the id of the customer/movie, instead of a hidden field, which would make it super vulnerable if there is no authentication.
