@@ -83,9 +83,9 @@ namespace Vidly.Controllers
         // movies
         public ActionResult Index()
         {
-            var movies = _context.Movies.Include(movie => movie.Genre).ToList();
+            //var movies = _context.Movies.Include(movie => movie.Genre).ToList();
 
-            return View(movies);
+            return View(/*movies*/);
         }
 
         // Attribute routing

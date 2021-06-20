@@ -1,3 +1,5 @@
 # Vidly (From Mosh Hamedani's course in Udemy)
 
 This is a video rental web app made in ASP.NET MVC 5, with the assistance of a [course in Udemy](https://www.udemy.com/course/the-complete-aspnet-mvc-5-course/). This implementation is very faithful and similar to the way Mosh Hamedani teaches in this course, with a few exceptions, at least up to the point of the first commit of this repository. Most notable exception is using a session variable on the form to create or edit a customer or a movie, to store the id of the customer/movie, instead of a hidden field, which would make it super vulnerable if there is no authentication.
+
+This can be improved by making it so that the job DataTables do on the client's side is done on the server, since a lot of entries on a database can potentially crash the client or freeze it. Also, it can be made so that view code on the client (Customers/Index.cshtml, the script) is separated from the code that's used to acquire data (AJAX requests). Ideally move that Javascript code to a separate file.

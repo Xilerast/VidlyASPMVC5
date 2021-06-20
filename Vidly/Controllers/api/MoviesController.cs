@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data.Entity;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -22,6 +23,7 @@ namespace Vidly.Controllers.api
             {
                 cfg.CreateMap<Movie, MovieDto>();
                 cfg.CreateMap<MovieDto, Movie>().ForMember(m => m.Id, opt => opt.Ignore());
+                cfg.CreateMap<Genre, GenreDto>();
             });
             Mapper = config.CreateMapper();
         }
@@ -29,7 +31,9 @@ namespace Vidly.Controllers.api
         // GET /api/movies
         public IEnumerable<MovieDto> GetMovies()
         {
-            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
+            return _context.Movies.
+                Include(m => m.Genre).
+                ToList().Select(Mapper.Map<Movie, MovieDto>);
         }
 
         // GET /api/movies/{id}
