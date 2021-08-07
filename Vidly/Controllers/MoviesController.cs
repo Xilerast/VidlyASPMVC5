@@ -50,6 +50,7 @@ namespace Vidly.Controllers
             // BAD: return new ViewResult();
         }
 
+        [Authorize(Roles = RoleName.CanManageMovies)]
         public ActionResult New()
         {
             var genres = _context.Genres.ToList();
@@ -81,11 +82,15 @@ namespace Vidly.Controllers
         }
 
         // movies
-        public ActionResult Index()
+        public ViewResult Index()
         {
             //var movies = _context.Movies.Include(movie => movie.Genre).ToList();
-
-            return View(/*movies*/);
+            if (User.IsInRole(RoleName.CanManageMovies))
+            {
+                return View("List");
+            }
+                
+            return View("ReadOnlyList");
         }
 
         // Attribute routing

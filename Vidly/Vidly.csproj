@@ -312,6 +312,14 @@
     <Compile Include="Migrations\202106120615342_MovieNameRequired.Designer.cs">
       <DependentUpon>202106120615342_MovieNameRequired.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108071448429_SeedUsers.cs" />
+    <Compile Include="Migrations\202108071448429_SeedUsers.Designer.cs">
+      <DependentUpon>202108071448429_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108071910143_AddDrivingLicenseToApplicationUser.cs" />
+    <Compile Include="Migrations\202108071910143_AddDrivingLicenseToApplicationUser.Designer.cs">
+      <DependentUpon>202108071910143_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -321,6 +329,7 @@
     <Compile Include="Models\MembershipType.cs" />
     <Compile Include="Models\Min18YearsIfAMember.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomerDetailsViewModel.cs" />
@@ -629,11 +638,12 @@
     <Content Include="Views\Customers.cshtml" />
     <Content Include="Views\Movies\Movies.cshtml" />
     <Content Include="Views\Customers\Index.cshtml" />
-    <Content Include="Views\Movies\Index.cshtml" />
+    <Content Include="Views\Movies\List.cshtml" />
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
     <Content Include="Views\Customers\CustomerForm.cshtml" />
     <Content Include="Views\Movies\MovieForm.cshtml" />
+    <Content Include="Views\Movies\ReadOnlyList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -705,6 +715,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202106120615342_MovieNameRequired.resx">
       <DependentUpon>202106120615342_MovieNameRequired.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108071448429_SeedUsers.resx">
+      <DependentUpon>202108071448429_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108071910143_AddDrivingLicenseToApplicationUser.resx">
+      <DependentUpon>202108071910143_AddDrivingLicenseToApplicationUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
